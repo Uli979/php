@@ -1,6 +1,6 @@
-<?php include("template/header.php"); ?>
+<?php require_once("template/header.php"); ?>
 <?php
-    include("conexion.php");
+    require_once("conexion.php");
 
     // Consulta SQL
     $query = "SELECT * FROM employee";
@@ -16,17 +16,23 @@
         }
 
         if (isset($_GET['id'])) {
-            $txtid = isset($_GET['id']) ? $_GET['id'] : "";
-            
-            // Consulta SQL para eliminar
-            $deleteQuery = "DELETE FROM employee WHERE id = ?";
-            $stmt = $connect->prepare($deleteQuery);
-            $stmt->bind_param("i", $txtid); // "i" indica que es un entero
+            $txtid = isset($_GET['id']) ? $_GET['id'] : NULL;
 
-            if ($stmt->execute()) {
-                header("location: index.php");
+            // Validar que el valor sea un número entero usando el filtro FILTER_VALIDATE_INT
+            if (filter_var($txtid, FILTER_VALIDATE_INT)) {
+                // Consulta SQL para eliminar
+                $deleteQuery = "DELETE FROM employee WHERE id = ?";
+                $stmt = $connect->prepare($deleteQuery);
+                $stmt->bind_param("i", $txtid); // "i" indica que es un entero
+
+                if ($stmt->execute()) {
+                    header("location: /");
+                } else {
+                    echo "Error al eliminar el registro: " . $stmt->error;
+                }
             } else {
-                echo "Error al eliminar el registro: " . $stmt->error;
+                // El valor no es un número entero válido
+                echo "El id no es válido";
             }
             
             // Cerrar la consulta preparada
@@ -83,7 +89,7 @@
                             <a href="#" class="btn btn-tabla-edit" data-bs-toggle="offcanvas" data-bs-target="#editarEmpleadoOffcanvas" aria-controls="editarEmpleadoOffcanvas"><i class="bi bi-pencil-fill"></i></a>
                         </td>
                         <td class="align-middle pt-0 pb-0 ps-0">
-                            <a href="index.php?id=<?php echo $empleado['id']; ?>" class="btn btn-tabla-delete"><i class="bi bi-trash3-fill"></i></a> 
+                            <a href="#" class="btn btn-tabla-delete"><i class="bi bi-trash3-fill"></i></a> 
                         </td>
                     </tr>
                 <?php } ?>
@@ -96,5 +102,6 @@
     </table>
 </div>
 
+<?php require_once("modulos/contacto/delete.php"); ?>
 <?php include("modulos/contacto/editar.php"); ?>
 <?php include("template/footer.php"); ?>

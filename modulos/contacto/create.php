@@ -1,49 +1,47 @@
 <?php
     if ($_POST) {
-        if ($_POST) {
-            if (isset($_POST["create_employee"])) {
-                // Lógica para crear un nuevo empleado
-                $cedula = (isset($_POST["cedula"]) ? $_POST["cedula"] : "");
-                $nombre = (isset($_POST["nombre"]) ? $_POST["nombre"] : "");
-                $apellido = (isset($_POST["apellido"]) ? $_POST["apellido"] : "");
-                $direccion = (isset($_POST["direccion"]) ? $_POST["direccion"] : "");
-                $telefono = (isset($_POST["telefono"]) ? $_POST["telefono"] : "");
-        
-                // Prepara la consulta SQL para la creación de empleado
-                $sql = "INSERT INTO employee (cedula, nombre, apellido, direccion, telefono)
-                        VALUES (?, ?, ?, ?, ?)";
-        
-                $stm = $connect->prepare($sql);
-        
-                // Enlaza los valores a los marcadores de posición utilizando bind_param
-                $stm->bind_param("sssss", $cedula, $nombre, $apellido, $direccion, $telefono);
-        
-                // Ejecuta la consulta
-                $stm->execute();
-        
-                header("Location: /");
-            } elseif (isset($_POST["update_employee"])) {
-                // Lógica para actualizar un empleado existente
-                $txtid = (isset($_POST["txtid"]) ? $_POST["txtid"] : "");
-                $cedula = (isset($_POST["cedula"]) ? $_POST["cedula"] : "");
-                $nombre = (isset($_POST["nombre"]) ? $_POST["nombre"] : "");
-                $apellido = (isset($_POST["apellido"]) ? $_POST["apellido"] : "");
-                $direccion = (isset($_POST["direccion"]) ? $_POST["direccion"] : "");
-                $telefono = (isset($_POST["telefono"]) ? $_POST["telefono"] : "");
-        
-                // Prepara la consulta SQL para la actualización de empleado
-                $sql = "UPDATE employee SET cedula=?, nombre=?, apellido=?, direccion=?, telefono=? WHERE id=?";
-        
-                $stm = $connect->prepare($sql);
-        
-                // Enlaza los valores a los marcadores de posición utilizando bind_param
-                $stm->bind_param("sssssi", $cedula, $nombre, $apellido, $direccion, $telefono, $txtid);
-        
-                // Ejecuta la consulta
-                $stm->execute();
-        
-                header("Location: /");
-            }
+        if (isset($_POST["create_employee"])) {
+            // Lógica para crear un nuevo empleado
+            $cedula = (isset($_POST["cedula"]) ? $_POST["cedula"] : "");
+            $nombre = (isset($_POST["nombre"]) ? $_POST["nombre"] : "");
+            $apellido = (isset($_POST["apellido"]) ? $_POST["apellido"] : "");
+            $direccion = (isset($_POST["direccion"]) ? $_POST["direccion"] : "");
+            $telefono = (isset($_POST["telefono"]) ? $_POST["telefono"] : "");
+    
+            // Prepara la consulta SQL para la creación de empleado
+            $sql = "INSERT INTO employee (cedula, nombre, apellido, direccion, telefono)
+                    VALUES (?, ?, ?, ?, ?)";
+    
+            $stm = $connect->prepare($sql);
+    
+            // Enlaza los valores a los marcadores de posición utilizando bind_param
+            $stm->bind_param("sssss", $cedula, $nombre, $apellido, $direccion, $telefono);
+    
+            // Ejecuta la consulta
+            $stm->execute();
+    
+            header("Location: /");
+        } elseif (isset($_POST["update_employee"])) {
+            // Lógica para actualizar un empleado existente
+            $txtid = (isset($_POST["txtid"]) ? $_POST["txtid"] : "");
+            $cedula = (isset($_POST["cedula"]) ? $_POST["cedula"] : "");
+            $nombre = (isset($_POST["nombre"]) ? $_POST["nombre"] : "");
+            $apellido = (isset($_POST["apellido"]) ? $_POST["apellido"] : "");
+            $direccion = (isset($_POST["direccion"]) ? $_POST["direccion"] : "");
+            $telefono = (isset($_POST["telefono"]) ? $_POST["telefono"] : "");
+    
+            // Prepara la consulta SQL para la actualización de empleado
+            $sql = "UPDATE employee SET cedula=?, nombre=?, apellido=?, direccion=?, telefono=? WHERE id=?";
+    
+            $stm = $connect->prepare($sql);
+    
+            // Enlaza los valores a los marcadores de posición utilizando bind_param
+            $stm->bind_param("sssssi", $cedula, $nombre, $apellido, $direccion, $telefono, $txtid);
+    
+            // Ejecuta la consulta
+            $stm->execute();
+    
+            header("Location: /");
         }
     }
 ?>

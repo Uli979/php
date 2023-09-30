@@ -71,12 +71,12 @@
             </div>
             <div class="mb-3 row">
                 <div class="col-md-6 pe-1">
-                    <label for="telefono" class="form-label">Phone</label>
-                    <input type="text" class="form-control rounded-4" id="telefono" name="telefono" placeholder="Enter phone" required>
-                </div>
-                <div class="col-md-6 ps-1">
                     <label for="cedula" class="form-label">ID Employee</label>
                     <input type="text" class="form-control rounded-4" id="cedula" name="cedula" placeholder="Enter ID" required>
+                </div>
+                <div class="col-md-6 ps-1">
+                    <label for="telefono" class="form-label">Phone</label>
+                    <input type="text" class="form-control rounded-4" id="telefono" name="telefono" placeholder="Enter phone" required>
                 </div>
             </div>
             <div class="modal-footer">

@@ -9,15 +9,15 @@
             <input type="hidden" class="form-control rounded-4" name="txtid" value="" id="txtidEdit">
             <div class="mb-3 row">
                 <div class="col-md-6 pe-1">
-                    <label for="nombreEdit">Nombre</label>
+                    <label for="nombreEdit">Name</label>
                     <input type="text" class="form-control rounded-4" name="nombre" value="" placeholder="Ingrese nombre" id="nombreEdit" required>
                 </div>
                 <div class="col-md-6 ps-1">
-                    <label for="apellidoEdit">Apellido</label>
+                    <label for="apellidoEdit">Surnames</label>
                     <input type="text" class="form-control rounded-4" name="apellido" value="" placeholder="Ingrese apellido" id="apellidoEdit" required>
                 </div>
             </div>
-            <label for="direccionEdit">Direccion</label>
+            <label for="direccionEdit">Address</label>
             <input type="text" class="form-control rounded-4  mb-3" name="direccion" value="" placeholder="Ingrese direccion" id="direccionEdit" required>
             <div class="mb-3 row">
                 <div class="col-md-6 pe-1">

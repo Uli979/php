@@ -8,7 +8,7 @@
         <p class="m-0 ps-3" id="idEmployeeDelete">ID: 100542236</p>
         <div class="d-flex justify-content-end">
             <button type="button" id="cerrarModalBtn" class="btn btn-modal-cerrar rounded-4">Cancel</button>
-            <a href="index.php?id=" type="button" class="ms-2 btn btn-danger rounded-4 me-3" id="btnAceptDeleteEmployee">Accept</a>
+            <a href="index.php?id=" type="button" class="ms-2 btn btn-danger rounded-4 me-3" id="btnAceptDeleteEmployee" name="btnAceptDeleteEmployee">Accept</a>
         </div>
     </div>
 </div>

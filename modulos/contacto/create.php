@@ -58,25 +58,25 @@
             <div class="mb-3 row">
                 <div class="col-md-6 pe-1">
                     <label for="nombre" class="form-label">Name</label>
-                    <input type="text" class="form-control rounded-4" id="nombre" name="nombre" placeholder="Enter name">
+                    <input type="text" class="form-control rounded-4" id="nombre" name="nombre" placeholder="Enter name" required>
                 </div>
                 <div class="col-md-6 ps-1">
                     <label for="apellido" class="form-label">Surnames</label>
-                    <input type="text" class="form-control rounded-4" id="apellido" name="apellido" placeholder="Enter Last Name">
+                    <input type="text" class="form-control rounded-4" id="apellido" name="apellido" placeholder="Enter Last Name" required>
                 </div>
             </div>
             <div class="mb-3">
                 <label for="direccion" class="form-label">Address</label>
-                <input type="text" class="form-control rounded-4" id="direccion" name="direccion" placeholder="Enter address">
+                <input type="text" class="form-control rounded-4" id="direccion" name="direccion" placeholder="Enter address" required>
             </div>
             <div class="mb-3 row">
                 <div class="col-md-6 pe-1">
                     <label for="telefono" class="form-label">Phone</label>
-                    <input type="text" class="form-control rounded-4" id="telefono" name="telefono" placeholder="Enter phone">
+                    <input type="text" class="form-control rounded-4" id="telefono" name="telefono" placeholder="Enter phone" required>
                 </div>
                 <div class="col-md-6 ps-1">
                     <label for="cedula" class="form-label">ID Employee</label>
-                    <input type="text" class="form-control rounded-4" id="cedula" name="cedula" placeholder="Enter ID">
+                    <input type="text" class="form-control rounded-4" id="cedula" name="cedula" placeholder="Enter ID" required>
                 </div>
             </div>
             <div class="modal-footer">

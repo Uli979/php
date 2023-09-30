@@ -1,4 +1,4 @@
-var n = 0; // variable que controla el evento de ecultar el modal delete employee solo cuando este abierto
+var n = 0; // variable que controla el evento de ocultar el modal delete employee solo cuando este abierto
 
 document.addEventListener("DOMContentLoaded", function () {
     //code for form edit employee
@@ -59,7 +59,7 @@ function cerrorModal(content) {
     n = 0;
 }
 
-// Funcion que resive a l btn y retorna los datos del contenedor donde se aloja
+// Funcion que resive al btn y retorna los datos del contenedor donde se aloja
 function obtenerDatos(btn) {
     // Obtener el contenedor del botón
     var containerOne = btn.parentNode;
